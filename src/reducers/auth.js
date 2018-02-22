@@ -1,8 +1,9 @@
-const auth = (state = [], action) => {
+const auth = (state = {logged: false}, action) => {
     switch (action.type) {
       case 'SIGN_IN':
         return {
-            ...state
+            ...state,
+            logged: true
         }
       default:
         return state
