@@ -6,3 +6,11 @@ In this example we are using:
 - Routes
 - Protected routes with automatic redirect
 - Styled Components
+
+## Run the project
+
+```npm install```
+
+```npm start```
+
+Enjoy!
