@@ -1,20 +1,21 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
 import {logout} from "../../actions/auth"
+import NavBar from "./styled-components/navbar";
+import NavLink from "./styled-components/nav-link";
 
 const Header = (props) => {
     return (
-        <nav className='header'>
-            <Link to='/'>Home</Link>
-            <Link to='/post'>Post</Link>
+        <NavBar title='TestSite' >
+            <NavLink to='/'>Home</NavLink>
+            <NavLink to='/post'>Post</NavLink>
             {
                 props.auth.logged ?
-                    <button onClick={props.logout}>Logout</button>
-                :
-                    <Link to='/login'>Login</Link>
+                    <NavLink to='/' onClick={props.logout}>Logout</NavLink>
+                    :
+                    <NavLink to='/login'>Login</NavLink>
             }
-        </nav>
+        </NavBar>
     );
 };
 

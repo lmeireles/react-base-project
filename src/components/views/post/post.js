@@ -1,8 +1,9 @@
 import React from 'react'
+import Title from '../../layout/styled-components/title'
 
 const Post = () => (
   <div>
-    <p>Post Page</p>
+    <Title red>Post Page</Title>
   </div>
 )
 

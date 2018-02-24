@@ -5,3 +5,4 @@ In this example we are using:
 - Redux
 - Routes
 - Protected routes with automatic redirect
+- Styled Components
