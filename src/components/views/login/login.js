@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
-import {login} from "../../../actions/auth"
+import { login } from '../../../store/auth/thunks'
 import Button from '../../layout/styled-components/button'
 import Title from '../../layout/styled-components/title'
 
@@ -20,12 +20,10 @@ const Login = (props) => {
     );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-    login: () => dispatch(login({}))
-});
-
 const mapStateToProps = (state) => ({
     auth: state.auth
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default connect(mapStateToProps, {
+    login
+})(Login)

@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {logout} from "../../actions/auth"
+import {logout} from "../../store/auth/thunks"
 import NavBar from "./styled-components/navbar";
 import NavLink from "./styled-components/nav-link";
 
@@ -19,12 +19,10 @@ const Header = (props) => {
     );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-    logout: () => dispatch(logout())
-});
-
 const mapStateToProps = (state) => ({
     auth: state.auth
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default connect(mapStateToProps, {
+    logout
+})(Header)
